@@ -6,7 +6,6 @@
   without a blank line, which CommonMark would swallow).
 """
 
-import asyncio
 import re
 import sys
 import urllib.request
@@ -16,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
 
-EXPECTED_MISSING = "masmbull/masmbull/output/"  # snake branch until the Action runs
+EXPECTED_MISSING = "masmbull/masmbull/output/"  # snake branch (404 only until the Action runs once)
 
 URL_RE = re.compile(r'(?:src|srcset)="(https?://[^"]+)"')
 MD_IMG_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
@@ -24,6 +23,9 @@ HREF_RE = re.compile(r'href="(https?://[^"]+)"')
 MD_LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\((https?://[^)\s]+)\)")
 # LinkedIn serves HTTP 999/redirects to bots - unreachable for scripted checks.
 KNOWN_BLOCKED = ("linkedin.com",)
+# Some third-party card services rate-limit or return 503/timeout when hit
+# repeatedly (they usually work fine via GitHub's image proxy + browser).
+FLAKY = ("streak-stats.demolab.com", "github-readme-streak-stats.herokuapp.com")
 HTML_BLOCK_START = re.compile(r"^\s*<(img|picture|div|table|source|a)\b", re.IGNORECASE)
 
 
@@ -67,10 +69,19 @@ def main() -> int:
     failures = 0
     for url in urls:
         status = http_status(url)
-        tag = "SKIP" if EXPECTED_MISSING in url else ("ok" if status.startswith("200") else "BAD")
+        if status.startswith("200"):
+            tag = "ok"
+        elif any(host in url for host in FLAKY):
+            # Transient on the third-party side - not a README bug.
+            tag = "SKIP*"
+        elif EXPECTED_MISSING in url:
+            tag = "SKIP"  # snake branch not generated yet - run the workflow first
+        else:
+            tag = "BAD"
         if tag == "BAD":
             failures += 1
-        print(f"[{tag:>4}] {status:<28} {url[:110]}")
+        print(f"[{tag:>5}] {status:<28} {url[:110]}")
+    print("SKIP* = transient failure of a known-flaky third-party service, not a README bug")
 
     print("\n--- outbound links (href) ---")
     links = list(dict.fromkeys(HREF_RE.findall(text) + MD_LINK_RE.findall(text)))
