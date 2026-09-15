@@ -18,6 +18,7 @@
 <!-- ░░ Badges ░░ -->
 <a href="https://www.linkedin.com/in/shohibul-anwar/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Shohibul%20Anwar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="https://github.com/masmbull"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-masmbull-0F2027?style=for-the-badge&logo=github&logoColor=D4AF37" /></a>
+<a href="https://wa.me/6282336534192"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-%2B62%20823%203653%204192-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 <img alt="Profile views" src="https://komarev.com/ghpvc/?username=masmbull&label=Profile%20Views&color=D4AF37&labelColor=0F2027&style=for-the-badge" />
 <img alt="Followers" src="https://img.shields.io/github/followers/masmbull?label=Followers&style=for-the-badge&color=D4AF37&labelColor=0F2027&logo=github" />
 <img alt="Total stars" src="https://img.shields.io/github/stars/masmbull?affiliations=OWNER&label=Total%20Stars&style=for-the-badge&color=D4AF37&labelColor=0F2027&logo=github" />
@@ -45,6 +46,7 @@
         <li>🎯 Focus: readable architecture, maintainable code, and UI that non-technical users get in seconds</li>
         <li>🌱 Exploring <b>Python</b> further for data-driven side projects</li>
         <li>📦 <b>8</b> public repositories so far — and counting</li>
+        <li>📱 WhatsApp: <a href="https://wa.me/6282336534192">+62 823 3653 4192</a></li>
         <li>⚡ Fun fact: my GitHub bio is quite literally <code>./Unknown</code></li>
       </ul>
       <blockquote>
@@ -148,6 +150,7 @@
 
 <a href="https://www.linkedin.com/in/shohibul-anwar/"><img alt="Connect on LinkedIn" src="https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="https://github.com/masmbull"><img alt="Follow on GitHub" src="https://img.shields.io/badge/Follow%20on%20GitHub-0F2027?style=for-the-badge&logo=github&logoColor=D4AF37" /></a>
+<a href="https://wa.me/6282336534192?text=Hi%20Shohibul%2C%20I%20came%20from%20your%20GitHub%20profile"><img alt="Chat on WhatsApp" src="https://img.shields.io/badge/Chat%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
 <br/><br/>
 

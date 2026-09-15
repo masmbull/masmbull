@@ -20,6 +20,10 @@ EXPECTED_MISSING = "masmbull/masmbull/output/"  # snake branch until the Action 
 
 URL_RE = re.compile(r'(?:src|srcset)="(https?://[^"]+)"')
 MD_IMG_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
+HREF_RE = re.compile(r'href="(https?://[^"]+)"')
+MD_LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\((https?://[^)\s]+)\)")
+# LinkedIn serves HTTP 999/redirects to bots - unreachable for scripted checks.
+KNOWN_BLOCKED = ("linkedin.com",)
 HTML_BLOCK_START = re.compile(r"^\s*<(img|picture|div|table|source|a)\b", re.IGNORECASE)
 
 
@@ -64,6 +68,18 @@ def main() -> int:
     for url in urls:
         status = http_status(url)
         tag = "SKIP" if EXPECTED_MISSING in url else ("ok" if status.startswith("200") else "BAD")
+        if tag == "BAD":
+            failures += 1
+        print(f"[{tag:>4}] {status:<28} {url[:110]}")
+
+    print("\n--- outbound links (href) ---")
+    links = list(dict.fromkeys(HREF_RE.findall(text) + MD_LINK_RE.findall(text)))
+    for url in links:
+        if any(blocked in url for blocked in KNOWN_BLOCKED):
+            print(f"[SKIP] locked for bots (authwall)   {url[:110]}")
+            continue
+        status = http_status(url)
+        tag = "ok" if status.startswith("200") else "BAD"
         if tag == "BAD":
             failures += 1
         print(f"[{tag:>4}] {status:<28} {url[:110]}")
