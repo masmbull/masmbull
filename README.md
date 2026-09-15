@@ -150,7 +150,7 @@
 
 <a href="https://www.linkedin.com/in/shohibul-anwar/"><img alt="Connect on LinkedIn" src="https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="https://github.com/masmbull"><img alt="Follow on GitHub" src="https://img.shields.io/badge/Follow%20on%20GitHub-0F2027?style=for-the-badge&logo=github&logoColor=D4AF37" /></a>
-<a href="https://wa.me/6282336534192?text=Hi%20Shohibul%2C%20I%20came%20from%20your%20GitHub%20profile"><img alt="Chat on WhatsApp" src="https://img.shields.io/badge/Chat%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+<a href="https://wa.me/6282336534192?text=Hi%20Shohibul%2C%20I%20came%20from%20your%20GitHub%20profile"><img alt="WA Aja Biar Mesra" src="https://img.shields.io/badge/Chat%20on%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
 <br/><br/>
 
