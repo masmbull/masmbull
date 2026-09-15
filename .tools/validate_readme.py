@@ -13,11 +13,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
+WORKFLOWS = [
+    ROOT / ".github" / "workflows" / "snake.yml",
+    ROOT / ".github" / "workflows" / "profile-3d.yml",
+]
 
 EXPECTED_MISSING = "masmbull/masmbull/output/"  # snake branch (404 only until the Action runs once)
 
 URL_RE = re.compile(r'(?:src|srcset)="(https?://[^"]+)"')
+REL_IMG_RE = re.compile(r'(?:src|srcset)="(\./[^"]+)"')
 MD_IMG_RE = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)")
 HREF_RE = re.compile(r'href="(https?://[^"]+)"')
 MD_LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\((https?://[^)\s]+)\)")
@@ -95,6 +99,17 @@ def main() -> int:
             failures += 1
         print(f"[{tag:>4}] {status:<28} {url[:110]}")
 
+    print("\n--- local images (relative src) ---")
+    for rel in list(dict.fromkeys(REL_IMG_RE.findall(text))):
+        resolved = (ROOT / rel[2:]).as_posix()
+        exists = (ROOT / rel[2:]).exists()
+        tag = "ok" if exists else "SKIP"
+        if not exists:
+            print(f"[{tag:>5}] {'missing until 3D workflow runs':<28} {rel} -> {resolved}")
+        else:
+            print(f"[{tag:>5}] {'exists':<28} {rel}")
+        # Missing local 3D art is expected on first push - the Action generates it.
+
     print("\n--- markdown structure ---")
     errors = markdown_structure_errors(text)
     for err in errors:
@@ -114,9 +129,10 @@ def main() -> int:
     try:
         import yaml  # type: ignore
 
-        data = yaml.safe_load(WORKFLOW.read_text(encoding="utf-8"))
-        jobs = list(data.get("jobs", {}))
-        print(f"[  ok] parsed fine, jobs={jobs}")
+        for workflow in WORKFLOWS:
+            data = yaml.safe_load(workflow.read_text(encoding="utf-8"))
+            jobs = list(data.get("jobs", {}))
+            print(f"[  ok] {workflow.relative_to(ROOT).as_posix()} parsed fine, jobs={jobs}")
     except ImportError:
         print("[SKIP] pyyaml not installed")
     except Exception as exc:  # noqa: BLE001

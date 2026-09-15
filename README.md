@@ -115,18 +115,39 @@
   <img alt="Snake animation eating my contribution graph" src="https://raw.githubusercontent.com/masmbull/masmbull/output/github-contribution-grid-snake.svg" />
 </picture>
 
+<br/><br/>
+
+<b>🏔️ 3D Contribution City</b><br/>
+<i>My commits as an isometric city — regenerated daily by GitHub Actions.</i><br/><br/>
+<img width="100%" alt="3D contribution city, night view" src="./profile-3d-contrib/profile-night-view.svg" />
+<br/>
+<img width="49%" alt="3D contributions, animated green blocks" src="./profile-3d-contrib/profile-green-animate.svg" />
+<img width="49%" alt="3D contributions, git-block style" src="./profile-3d-contrib/profile-gitblock.svg" />
+
 </div>
 
 <img width="100%" alt="divider" src="https://capsule-render.vercel.app/api?type=rect&color=0:0F2027,50:D4AF37,100:0F2027&height=4" />
 
 ## 📌 Featured Projects
 
-| Project | What it does | Stack |
+<div align="center">
+
+<a href="https://github.com/masmbull/TICKETING"><img width="49%" alt="TICKETING — IT helpdesk ticketing system" src="https://socialify.git.ci/masmbull/TICKETING/image?description=1&font=JetBrains%20Mono&forks=1&issues=1&language=1&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" /></a>
+<a href="https://github.com/masmbull/hr-sys"><img width="49%" alt="hr-sys — HR administration system" src="https://socialify.git.ci/masmbull/hr-sys/image?description=1&font=JetBrains%20Mono&forks=1&issues=1&language=1&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" /></a>
+
+<br/>
+
+<img alt="TICKETING last commit" src="https://img.shields.io/github/last-commit/masmbull/TICKETING?style=flat-square&logo=github&color=D4AF37" />
+<img alt="TICKETING stars" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fmasmbull%2FTICKETING&query=%24.stargazers_count&label=TICKETING%20stars&style=flat-square&color=D4AF37" />
+<img alt="hr-sys last commit" src="https://img.shields.io/github/last-commit/masmbull/hr-sys?style=flat-square&logo=github&color=D4AF37" />
+<img alt="hr-sys stars" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fmasmbull%2Fhr-sys&query=%24.stargazers_count&label=hr-sys%20stars&style=flat-square&color=D4AF37" />
+
+</div>
+
+| Project | What it does | Live status |
 | :--- | :--- | :--- |
-| **[TICKETING](https://github.com/masmbull/TICKETING)** | IT helpdesk ticketing system — request intake, tracking, and reporting. | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white) |
-| **[hr-sys](https://github.com/masmbull/hr-sys)** | HR system covering employee data and day-to-day administration. | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
-| **[downloadvtviral](https://github.com/masmbull/downloadvtviral)** | TypeScript web app, live on Vercel. | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
-| **[Personal-Financing](https://github.com/masmbull/Personal-Financing)** | Personal finance tracker to record and review spending. | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| **[downloadvtviral](https://github.com/masmbull/downloadvtviral)** | TypeScript web app, live on Vercel. | ![last commit](https://img.shields.io/github/last-commit/masmbull/downloadvtviral?style=flat-square&logo=github&color=D4AF37) ![stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fmasmbull%2Fdownloadvtviral&query=%24.stargazers_count&label=stars&style=flat-square&color=D4AF37) |
+| **[Personal-Financing](https://github.com/masmbull/Personal-Financing)** | Personal finance tracker to record and review spending. | ![last commit](https://img.shields.io/github/last-commit/masmbull/Personal-Financing?style=flat-square&logo=github&color=D4AF37) ![stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fmasmbull%2FPersonal-Financing&query=%24.stargazers_count&label=stars&style=flat-square&color=D4AF37) |
 
 <div align="center">
 
@@ -140,6 +161,8 @@
 
 <div align="center">
   <img alt="Random developer quote" src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" />
+  <br/><br/>
+  <img alt="Random developer joke" src="https://readme-jokes.vercel.app/api?theme=dark&hideBorder=true&bgColor=0F2027" />
 </div>
 
 <img width="100%" alt="divider" src="https://capsule-render.vercel.app/api?type=rect&color=0:0F2027,50:D4AF37,100:0F2027&height=4" />
